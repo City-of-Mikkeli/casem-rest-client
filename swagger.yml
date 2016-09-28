@@ -28,8 +28,8 @@ paths:
   /Files({fileId}):
     get:
       operationId: findFile
-      summary: Finds file with FileId
-      description: Finds file with FileId
+      summary: Finds file with fileId
+      description: Finds file with fileId
       parameters:
         - name: fileId
           in: path
@@ -44,6 +44,171 @@ paths:
           description: Return single file
           schema:
             $ref: '#/definitions/File'
+  /ContentLanguages:
+    get:
+      operationId: listContentLanguages
+      summary: List contentLanguages
+      description: List contentLanguages
+      tags:
+        - ContentLanguages
+      responses:
+        200:
+          description: An array of contentLanguages
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ContentLanguage'
+  /ContentLanguages({contentLanguageId}):
+    get:
+      operationId: findContentLanguage
+      summary: Finds contentLanguage with contentLanguageId
+      description: Finds contentLanguage with contentLanguageId
+      parameters:
+        - name: contentLanguageId
+          in: path
+          description: ContentLanguage id
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - ContentLanguages
+      responses:
+        200:
+          description: Return a single contentLanguage
+          schema:
+            $ref: '#/definitions/ContentLanguage'
+  /Nodes:
+    get:
+      operationId: listNodes
+      summary: List nodes
+      description: List nodes
+      tags:
+        - Nodes
+      responses:
+        200:
+          description: An array of nodes
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Node'
+  /Nodes({nodeId}):
+    get:
+      operationId: findNode
+      summary: Finds node with nodeId
+      description: Finds node with nodeId
+      parameters:
+        - name: nodeId
+          in: path
+          description: Node id
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - Nodes
+      responses:
+        200:
+          description: Return a single node
+          schema:
+            $ref: '#/definitions/Node'
+  /Contents:
+    get:
+      operationId: listContents
+      summary: List contents
+      description: List contents
+      tags:
+        - Contents
+      responses:
+        200:
+          description: An array of contents
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Content'
+  /Contents({contentId}):
+    get:
+      operationId: findContent
+      summary: Finds content with contentId
+      description: Finds content with contentId
+      parameters:
+        - name: contentId
+          in: path
+          description: Content id
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - Contents
+      responses:
+        200:
+          description: Return a single content
+          schema:
+            $ref: '#/definitions/Content'
+  /ExtendedProperties:
+    get:
+      operationId: listExtendedProperties
+      summary: List extendedProperties
+      description: List extendedProperties
+      tags:
+        - ExtendedProperties
+      responses:
+        200:
+          description: An array of extendedProperties
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ExtendedProperty'
+  /ExtendedProperties({extendedPropertyId}):
+    get:
+      operationId: findExtendedProperty
+      summary: Finds extendedProperty with extendedPropertyId
+      description: Finds extendedProperty with extendedPropertyId
+      parameters:
+        - name: extendedPropertyId
+          in: path
+          description: ExtendedProperty id
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - ExtendedProperties
+      responses:
+        200:
+          description: Return a single extendedProperty
+          schema:
+            $ref: '#/definitions/ExtendedProperty'
+  /Templates:
+    get:
+      operationId: listTemplates
+      summary: List templates
+      description: List templates
+      tags:
+        - Templates
+      responses:
+        200:
+          description: An array of templates
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Template'
+  /Templates({templateId}):
+    get:
+      operationId: findTemplate
+      summary: Finds template with templateId
+      description: Finds template with templateId
+      parameters:
+        - name: templateId
+          in: path
+          description: Template id
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - Templates
+      responses:
+        200:
+          description: Return a single template
+          schema:
+            $ref: '#/definitions/Template'
 definitions:
   File:
     properties:
@@ -179,7 +344,7 @@ definitions:
       FileId:
         type: integer
         format: int64
-  ExtendedProperties:
+  ExtendedProperty:
     properties:
       Id:
         type: integer
