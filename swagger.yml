@@ -1,0 +1,219 @@
+swagger: '2.0'
+info:
+  title: CaseM client
+  description: Automatically generated client libraries for CaseM
+  version: "0.0.1"
+schemes:
+  - http
+basePath: /api/opennc/v1/
+consumes:
+  - application/json;charset=utf-8
+produces:
+  - application/json;charset=utf-8
+paths:
+  /Files:
+    get:
+      operationId: listFiles
+      summary: List files
+      description: List files
+      tags:
+        - Files
+      responses:
+        200:
+          description: An array of files
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/File'
+  /Files({fileId}):
+    get:
+      operationId: findFile
+      summary: Finds file with FileId
+      description: Finds file with FileId
+      parameters:
+        - name: fileId
+          in: path
+          description: File id
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - Files
+      responses:
+        200:
+          description: Return single file
+          schema:
+            $ref: '#/definitions/File'
+definitions:
+  File:
+    properties:
+      FileId:
+        type: integer
+        format: int64
+      DownloadId:
+        type: string
+        format: uuid
+      Url:
+        type: string
+      Name:
+        type: string
+      ContentType:
+        type: string
+      Date:
+        type: string
+        format: date-time
+      Filename:
+        type: string
+      Description:
+        type: string
+      TotalBytes:
+        type: integer
+        format: int64
+  ContentLanguage:
+    properties:
+      odata.metadata:
+        type: string
+      LanguageId:
+        type: integer
+        format: int64
+      Culture:
+        type: string
+      Name:
+        type: string
+      Label:
+        type: string
+  Node:
+    properties:
+      odata.metadata:
+        type: string
+      NodeId:
+        type: integer
+        format: int64
+      ParentId:
+        type: integer
+        format: int64
+      Names:
+        type: array
+        items:
+          $ref: '#/definitions/NodeName'
+      SortOrder:
+        type: integer
+        format: int32
+      Date:
+        type: string
+        format: date-time
+      Type:
+        type: integer
+        format: int64
+  NodeName:
+    properties:
+      LanguageId:
+        type: integer
+        format: int64
+      Name:
+        type: string
+      Link:
+        type: string
+  Content:
+    properties:
+      odata.metadata:
+        type: string
+      ContentId:
+        type: integer
+        format: int64
+      Subject:
+        type: string
+      LanguageId:
+        type: integer
+        format: int64
+      PublicDate:
+        type: string
+        format: date-time
+      ExpiryDate:
+        type: string
+        format: date-time
+      CreatedDate:
+        type: string
+        format: date-time
+      EditedDate:
+        type: string
+        format: date-time
+      TemplateId:
+        type: integer
+        format: int64
+      Version:
+        type: integer
+        format: int64
+      CreatorId:
+        type: integer
+        format: int64
+      Editor:
+        type: integer
+        format: int64
+      EventStartDate:
+        type: string
+        format: date-time
+      EventEndDate:
+        type: string
+        format: date-time
+      Classifications:
+        type: array
+        items:
+          $ref: '#/definitions/ContentClassification'
+      FileLinks:
+        type: array
+        items:
+          $ref: '#/definitions/ContentFileLink'
+  ContentClassification:
+    properties:
+      NodeId:
+        type: integer
+        format: int64
+      NodeName:
+        type: string
+      Type:
+        type: integer
+        format: int64
+  ContentFileLink:
+    properties:
+      FileId:
+        type: integer
+        format: int64
+  ExtendedProperties:
+    properties:
+      Id:
+        type: integer
+        format: int64
+      Name:
+        type: string
+      Text:
+        type: string
+      Number:
+        type: integer
+        format: int64
+      Date:
+        type: string
+        format: date-time
+  Template:
+    properties:
+      odata.metadata:
+        type: string
+      TemplateId:
+        type: integer
+        format: int64
+      Name:
+        type: string
+      Type:
+        type: integer
+        format: int64
+      Names:
+        type: array
+        items:
+          $ref: '#/definitions/TemplateName'
+  TemplateName:
+    properties:
+      Name:
+        type: string
+      LanguageId:
+        type: integer
+        format: int64
