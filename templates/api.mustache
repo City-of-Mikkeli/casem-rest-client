@@ -38,7 +38,7 @@ public class {{classname}} {
     {{/queryParams}}
     
     String path = String.format("%s/{{{path}}}"{{#pathParams}}
-      .replaceAll("\\{" + "{{baseName}}" + "\\}", {{paramName}}){{/pathParams}}, baseUrl);
+      .replaceAll("\\{" + "{{baseName}}" + "\\}", String.valueOf({{paramName}})){{/pathParams}}, baseUrl);
       
     ResultType<{{{returnType}}}> resultType = new ResultType<{{{returnType}}}>() {};
     return client.do{{httpMethod}}Request(path, resultType, queryParams);
