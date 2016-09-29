@@ -20,11 +20,9 @@ paths:
         - Files
       responses:
         200:
-          description: An array of files
+          description: Return file list
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/File'
+            $ref: '#/definitions/FileList'
         500:
           description: Internal server error
           schema:
@@ -69,11 +67,9 @@ paths:
         - ContentLanguages
       responses:
         200:
-          description: An array of contentLanguages
+          description: Return content language list
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/ContentLanguage'
+            $ref: '#/definitions/ContentLanguageList'
         500:
           description: Internal server error
           schema:
@@ -118,11 +114,9 @@ paths:
         - Nodes
       responses:
         200:
-          description: An array of nodes
+          description: Returns node list
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Node'
+            $ref: '#/definitions/NodeList'
         500:
           description: Internal server error
           schema:
@@ -167,11 +161,9 @@ paths:
         - Contents
       responses:
         200:
-          description: An array of contents
+          description: Returns content list
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Content'
+            $ref: '#/definitions/ContentList'
         500:
           description: Internal server error
           schema:
@@ -207,6 +199,68 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/Error'
+  /Contents({contentId})/Files:
+    get:
+      operationId: listFilesByContent
+      summary: Lists files by contentId
+      description: Lists files by contentId
+      parameters:
+        - name: contentId
+          in: path
+          description: Content id
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - Contents
+      responses:
+        200:
+          description: Return file list
+          schema:
+            $ref: '#/definitions/FileList'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
+  /Contents({contentId})/ExtendedProperties:
+    get:
+      operationId: listExtendedPropertiesByContent
+      summary: Lists extended properties by contentId
+      description: Lists extended properties by contentId
+      parameters:
+        - name: contentId
+          in: path
+          description: Content id
+          required: true
+          type: integer
+          format: int64
+      tags:
+        - Contents
+      responses:
+        200:
+          description: Return extended property list
+          schema:
+            $ref: '#/definitions/ExtendedPropertyList'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /ExtendedProperties:
     get:
       operationId: listExtendedProperties
@@ -218,9 +272,7 @@ paths:
         200:
           description: An array of extendedProperties
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/ExtendedProperty'
+            $ref: '#/definitions/ExtendedPropertyList'
         500:
           description: Internal server error
           schema:
@@ -265,11 +317,9 @@ paths:
         - Templates
       responses:
         200:
-          description: An array of templates
+          description: Returns template list
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Template'
+            $ref: '#/definitions/TemplateList'
         500:
           description: Internal server error
           schema:
@@ -308,6 +358,8 @@ paths:
 definitions:
   File:
     properties:
+      odata.metadata:
+        type: string
       FileId:
         type: integer
         format: int64
@@ -330,6 +382,14 @@ definitions:
       TotalBytes:
         type: integer
         format: int64
+  FileList:
+    properties:
+      odata.metadata:
+        type: string
+      value:
+        type: array
+        items:
+          $ref: '#/definitions/File'  
   ContentLanguage:
     properties:
       odata.metadata:
@@ -343,6 +403,14 @@ definitions:
         type: string
       Label:
         type: string
+  ContentLanguageList:
+    properties:
+      odata.metadata:
+        type: string
+      value:
+        type: array
+        items:
+          $ref: '#/definitions/ContentLanguage' 
   Node:
     properties:
       odata.metadata:
@@ -375,6 +443,14 @@ definitions:
         type: string
       Link:
         type: string
+  NodeList:
+    properties:
+      odata.metadata:
+        type: string
+      value:
+        type: array
+        items:
+          $ref: '#/definitions/Node'
   Content:
     properties:
       odata.metadata:
@@ -440,8 +516,18 @@ definitions:
       FileId:
         type: integer
         format: int64
+  ContentList:
+    properties:
+      odata.metadata:
+        type: string
+      value:
+        type: array
+        items:
+          $ref: '#/definitions/Content'
   ExtendedProperty:
     properties:
+      odata.metadata:
+        type: string
       Id:
         type: integer
         format: int64
@@ -455,6 +541,14 @@ definitions:
       Date:
         type: string
         format: date-time
+  ExtendedPropertyList:
+    properties:
+      odata.metadata:
+        type: string
+      value:
+        type: array
+        items:
+          $ref: '#/definitions/ExtendedProperty'
   Template:
     properties:
       odata.metadata:
@@ -478,6 +572,14 @@ definitions:
       LanguageId:
         type: integer
         format: int64
+  TemplateList:
+    properties:
+      odata.metadata:
+        type: string
+      value:
+        type: array
+        items:
+          $ref: '#/definitions/Template'
   Error:
     properties:
       odata.error:
