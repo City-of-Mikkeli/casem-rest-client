@@ -16,6 +16,12 @@ paths:
       operationId: listFiles
       summary: List files
       description: List files
+      parameters:
+        - name: $skiptoken
+          in: query
+          description: Skip until this id
+          required: false
+          type: string
       tags:
         - Files
       responses:
@@ -63,6 +69,12 @@ paths:
       operationId: listContentLanguages
       summary: List contentLanguages
       description: List contentLanguages
+      parameters:
+        - name: $skiptoken
+          in: query
+          description: Skip until this id
+          required: false
+          type: string
       tags:
         - ContentLanguages
       responses:
@@ -110,6 +122,12 @@ paths:
       operationId: listNodes
       summary: List nodes
       description: List nodes
+      parameters:
+        - name: $skiptoken
+          in: query
+          description: Skip until this id
+          required: false
+          type: string
       tags:
         - Nodes
       responses:
@@ -157,6 +175,12 @@ paths:
       operationId: listContents
       summary: List contents
       description: List contents
+      parameters:
+        - name: $skiptoken
+          in: query
+          description: Skip until this id
+          required: false
+          type: string
       tags:
         - Contents
       responses:
@@ -211,6 +235,11 @@ paths:
           required: true
           type: integer
           format: int64
+        - name: $skiptoken
+          in: query
+          description: Skip until this id
+          required: false
+          type: string
       tags:
         - Contents
       responses:
@@ -242,6 +271,11 @@ paths:
           required: true
           type: integer
           format: int64
+        - name: $skiptoken
+          in: query
+          description: Skip until this id
+          required: false
+          type: string
       tags:
         - Contents
       responses:
@@ -266,6 +300,12 @@ paths:
       operationId: listExtendedProperties
       summary: List extendedProperties
       description: List extendedProperties
+      parameters:
+        - name: $skiptoken
+          in: query
+          description: Skip until this id
+          required: false
+          type: string
       tags:
         - ExtendedProperties
       responses:
@@ -313,6 +353,12 @@ paths:
       operationId: listTemplates
       summary: List templates
       description: List templates
+      parameters:
+        - name: $skiptoken
+          in: query
+          description: Skip until this id
+          required: false
+          type: string
       tags:
         - Templates
       responses:
@@ -386,6 +432,8 @@ definitions:
     properties:
       odata.metadata:
         type: string
+      odata.nextLink:
+        type: string
       value:
         type: array
         items:
@@ -406,6 +454,8 @@ definitions:
   ContentLanguageList:
     properties:
       odata.metadata:
+        type: string
+      odata.nextLink:
         type: string
       value:
         type: array
@@ -446,6 +496,8 @@ definitions:
   NodeList:
     properties:
       odata.metadata:
+        type: string
+      odata.nextLink:
         type: string
       value:
         type: array
@@ -520,6 +572,8 @@ definitions:
     properties:
       odata.metadata:
         type: string
+      odata.nextLink:
+        type: string
       value:
         type: array
         items:
@@ -544,6 +598,8 @@ definitions:
   ExtendedPropertyList:
     properties:
       odata.metadata:
+        type: string
+      odata.nextLink:
         type: string
       value:
         type: array
@@ -575,6 +631,8 @@ definitions:
   TemplateList:
     properties:
       odata.metadata:
+        type: string
+      odata.nextLink:
         type: string
       value:
         type: array
