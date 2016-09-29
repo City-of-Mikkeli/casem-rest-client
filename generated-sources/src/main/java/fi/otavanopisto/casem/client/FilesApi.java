@@ -28,13 +28,14 @@ import fi.otavanopisto.casem.client.model.*;
 
 import fi.otavanopisto.casem.client.model.Error;
 import java.io.File;
+import fi.otavanopisto.casem.client.model.FileList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T11:18:43.300+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
 public class FilesApi {
 
   private ApiClient client;
@@ -63,12 +64,12 @@ public class FilesApi {
    * List files
    * List files
    */
-  public ApiResponse<List<File>> listFiles() {
+  public ApiResponse<FileList> listFiles() {
     Map<String, Object> queryParams = new HashMap<>();
         
     String path = String.format("%s//Files", baseUrl);
       
-    ResultType<List<File>> resultType = new ResultType<List<File>>() {};
+    ResultType<FileList> resultType = new ResultType<FileList>() {};
     return client.doGETRequest(path, resultType, queryParams);
   }
   

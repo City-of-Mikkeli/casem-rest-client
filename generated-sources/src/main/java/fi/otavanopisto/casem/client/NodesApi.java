@@ -28,13 +28,14 @@ import fi.otavanopisto.casem.client.model.*;
 
 import fi.otavanopisto.casem.client.model.Node;
 import fi.otavanopisto.casem.client.model.Error;
+import fi.otavanopisto.casem.client.model.NodeList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T11:18:43.300+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
 public class NodesApi {
 
   private ApiClient client;
@@ -63,12 +64,12 @@ public class NodesApi {
    * List nodes
    * List nodes
    */
-  public ApiResponse<List<Node>> listNodes() {
+  public ApiResponse<NodeList> listNodes() {
     Map<String, Object> queryParams = new HashMap<>();
         
     String path = String.format("%s//Nodes", baseUrl);
       
-    ResultType<List<Node>> resultType = new ResultType<List<Node>>() {};
+    ResultType<NodeList> resultType = new ResultType<NodeList>() {};
     return client.doGETRequest(path, resultType, queryParams);
   }
   

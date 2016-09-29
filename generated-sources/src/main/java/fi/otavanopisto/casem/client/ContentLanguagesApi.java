@@ -28,13 +28,14 @@ import fi.otavanopisto.casem.client.model.*;
 
 import fi.otavanopisto.casem.client.model.Error;
 import fi.otavanopisto.casem.client.model.ContentLanguage;
+import fi.otavanopisto.casem.client.model.ContentLanguageList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T11:18:43.300+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
 public class ContentLanguagesApi {
 
   private ApiClient client;
@@ -63,12 +64,12 @@ public class ContentLanguagesApi {
    * List contentLanguages
    * List contentLanguages
    */
-  public ApiResponse<List<ContentLanguage>> listContentLanguages() {
+  public ApiResponse<ContentLanguageList> listContentLanguages() {
     Map<String, Object> queryParams = new HashMap<>();
         
     String path = String.format("%s//ContentLanguages", baseUrl);
       
-    ResultType<List<ContentLanguage>> resultType = new ResultType<List<ContentLanguage>>() {};
+    ResultType<ContentLanguageList> resultType = new ResultType<ContentLanguageList>() {};
     return client.doGETRequest(path, resultType, queryParams);
   }
   

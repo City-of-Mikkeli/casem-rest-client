@@ -28,77 +28,64 @@ package fi.otavanopisto.casem.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import fi.otavanopisto.casem.client.model.ExtendedProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * NodeName
+ * ExtendedPropertyList
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
-public class NodeName   {
-  @JsonProperty("LanguageId")
-  private Long languageId = null;
+public class ExtendedPropertyList   {
+  @JsonProperty("odata.metadata")
+  private String odataMetadata = null;
 
-  @JsonProperty("Name")
-  private String name = null;
+  @JsonProperty("value")
+  private List<ExtendedProperty> value = new ArrayList<ExtendedProperty>();
 
-  @JsonProperty("Link")
-  private String link = null;
-
-  public NodeName languageId(Long languageId) {
-    this.languageId = languageId;
+  public ExtendedPropertyList odataMetadata(String odataMetadata) {
+    this.odataMetadata = odataMetadata;
     return this;
   }
 
    /**
-   * Get languageId
-   * @return languageId
+   * Get odataMetadata
+   * @return odataMetadata
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Long getLanguageId() {
-    return languageId;
+  public String getOdataMetadata() {
+    return odataMetadata;
   }
 
-  public void setLanguageId(Long languageId) {
-    this.languageId = languageId;
+  public void setOdataMetadata(String odataMetadata) {
+    this.odataMetadata = odataMetadata;
   }
 
-  public NodeName name(String name) {
-    this.name = name;
+  public ExtendedPropertyList value(List<ExtendedProperty> value) {
+    this.value = value;
+    return this;
+  }
+
+  public ExtendedPropertyList addValueItem(ExtendedProperty valueItem) {
+    this.value.add(valueItem);
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get value
+   * @return value
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getName() {
-    return name;
+  public List<ExtendedProperty> getValue() {
+    return value;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public NodeName link(String link) {
-    this.link = link;
-    return this;
-  }
-
-   /**
-   * Get link
-   * @return link
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getLink() {
-    return link;
-  }
-
-  public void setLink(String link) {
-    this.link = link;
+  public void setValue(List<ExtendedProperty> value) {
+    this.value = value;
   }
 
 
@@ -110,25 +97,23 @@ public class NodeName   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NodeName nodeName = (NodeName) o;
-    return Objects.equals(this.languageId, nodeName.languageId) &&
-        Objects.equals(this.name, nodeName.name) &&
-        Objects.equals(this.link, nodeName.link);
+    ExtendedPropertyList extendedPropertyList = (ExtendedPropertyList) o;
+    return Objects.equals(this.odataMetadata, extendedPropertyList.odataMetadata) &&
+        Objects.equals(this.value, extendedPropertyList.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(languageId, name, link);
+    return Objects.hash(odataMetadata, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NodeName {\n");
+    sb.append("class ExtendedPropertyList {\n");
     
-    sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    sb.append("    odataMetadata: ").append(toIndentedString(odataMetadata)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }
