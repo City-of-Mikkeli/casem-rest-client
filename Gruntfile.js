@@ -54,7 +54,7 @@ module.exports = function(grunt) {
           --artifact-version `mvn -f generated-sources/pom.xml.before -q -Dexec.executable=\'echo\' -Dexec.args=\'${project.version}\' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.3.1:exec` \
           --template-dir templates \
           --library jersey2 \
-          --additional-properties dateLibrary=java8 \
+          --additional-properties dateLibrary=java8-localdatetime \
           -o generated-sources/'
       },
       'install-casem-java-client': {
