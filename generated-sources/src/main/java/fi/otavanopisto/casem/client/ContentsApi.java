@@ -28,13 +28,16 @@ import fi.otavanopisto.casem.client.model.*;
 
 import fi.otavanopisto.casem.client.model.Content;
 import fi.otavanopisto.casem.client.model.Error;
+import fi.otavanopisto.casem.client.model.ContentList;
+import fi.otavanopisto.casem.client.model.ExtendedPropertyList;
+import fi.otavanopisto.casem.client.model.FileList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T11:18:43.300+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
 public class ContentsApi {
 
   private ApiClient client;
@@ -63,12 +66,40 @@ public class ContentsApi {
    * List contents
    * List contents
    */
-  public ApiResponse<List<Content>> listContents() {
+  public ApiResponse<ContentList> listContents() {
     Map<String, Object> queryParams = new HashMap<>();
         
     String path = String.format("%s//Contents", baseUrl);
       
-    ResultType<List<Content>> resultType = new ResultType<List<Content>>() {};
+    ResultType<ContentList> resultType = new ResultType<ContentList>() {};
+    return client.doGETRequest(path, resultType, queryParams);
+  }
+  /**
+   * Lists extended properties by contentId
+   * Lists extended properties by contentId
+   * @param contentId Content id (required)
+   */
+  public ApiResponse<ExtendedPropertyList> listExtendedPropertiesByContent(Long contentId) {
+    Map<String, Object> queryParams = new HashMap<>();
+        
+    String path = String.format("%s//Contents({contentId})/ExtendedProperties"
+      .replaceAll("\\{" + "contentId" + "\\}", String.valueOf(contentId)), baseUrl);
+      
+    ResultType<ExtendedPropertyList> resultType = new ResultType<ExtendedPropertyList>() {};
+    return client.doGETRequest(path, resultType, queryParams);
+  }
+  /**
+   * Lists files by contentId
+   * Lists files by contentId
+   * @param contentId Content id (required)
+   */
+  public ApiResponse<FileList> listFilesByContent(Long contentId) {
+    Map<String, Object> queryParams = new HashMap<>();
+        
+    String path = String.format("%s//Contents({contentId})/Files"
+      .replaceAll("\\{" + "contentId" + "\\}", String.valueOf(contentId)), baseUrl);
+      
+    ResultType<FileList> resultType = new ResultType<FileList>() {};
     return client.doGETRequest(path, resultType, queryParams);
   }
   

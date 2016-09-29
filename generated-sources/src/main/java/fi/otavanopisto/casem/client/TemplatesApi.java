@@ -28,13 +28,14 @@ import fi.otavanopisto.casem.client.model.*;
 
 import fi.otavanopisto.casem.client.model.Error;
 import fi.otavanopisto.casem.client.model.Template;
+import fi.otavanopisto.casem.client.model.TemplateList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T11:18:43.300+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
 public class TemplatesApi {
 
   private ApiClient client;
@@ -63,12 +64,12 @@ public class TemplatesApi {
    * List templates
    * List templates
    */
-  public ApiResponse<List<Template>> listTemplates() {
+  public ApiResponse<TemplateList> listTemplates() {
     Map<String, Object> queryParams = new HashMap<>();
         
     String path = String.format("%s//Templates", baseUrl);
       
-    ResultType<List<Template>> resultType = new ResultType<List<Template>>() {};
+    ResultType<TemplateList> resultType = new ResultType<TemplateList>() {};
     return client.doGETRequest(path, resultType, queryParams);
   }
   

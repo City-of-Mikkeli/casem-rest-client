@@ -28,77 +28,64 @@ package fi.otavanopisto.casem.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import fi.otavanopisto.casem.client.model.Content;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * NodeName
+ * ContentList
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
-public class NodeName   {
-  @JsonProperty("LanguageId")
-  private Long languageId = null;
+public class ContentList   {
+  @JsonProperty("odata.metadata")
+  private String odataMetadata = null;
 
-  @JsonProperty("Name")
-  private String name = null;
+  @JsonProperty("value")
+  private List<Content> value = new ArrayList<Content>();
 
-  @JsonProperty("Link")
-  private String link = null;
-
-  public NodeName languageId(Long languageId) {
-    this.languageId = languageId;
+  public ContentList odataMetadata(String odataMetadata) {
+    this.odataMetadata = odataMetadata;
     return this;
   }
 
    /**
-   * Get languageId
-   * @return languageId
+   * Get odataMetadata
+   * @return odataMetadata
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Long getLanguageId() {
-    return languageId;
+  public String getOdataMetadata() {
+    return odataMetadata;
   }
 
-  public void setLanguageId(Long languageId) {
-    this.languageId = languageId;
+  public void setOdataMetadata(String odataMetadata) {
+    this.odataMetadata = odataMetadata;
   }
 
-  public NodeName name(String name) {
-    this.name = name;
+  public ContentList value(List<Content> value) {
+    this.value = value;
+    return this;
+  }
+
+  public ContentList addValueItem(Content valueItem) {
+    this.value.add(valueItem);
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get value
+   * @return value
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getName() {
-    return name;
+  public List<Content> getValue() {
+    return value;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public NodeName link(String link) {
-    this.link = link;
-    return this;
-  }
-
-   /**
-   * Get link
-   * @return link
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getLink() {
-    return link;
-  }
-
-  public void setLink(String link) {
-    this.link = link;
+  public void setValue(List<Content> value) {
+    this.value = value;
   }
 
 
@@ -110,25 +97,23 @@ public class NodeName   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NodeName nodeName = (NodeName) o;
-    return Objects.equals(this.languageId, nodeName.languageId) &&
-        Objects.equals(this.name, nodeName.name) &&
-        Objects.equals(this.link, nodeName.link);
+    ContentList contentList = (ContentList) o;
+    return Objects.equals(this.odataMetadata, contentList.odataMetadata) &&
+        Objects.equals(this.value, contentList.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(languageId, name, link);
+    return Objects.hash(odataMetadata, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NodeName {\n");
+    sb.append("class ContentList {\n");
     
-    sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    sb.append("    odataMetadata: ").append(toIndentedString(odataMetadata)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

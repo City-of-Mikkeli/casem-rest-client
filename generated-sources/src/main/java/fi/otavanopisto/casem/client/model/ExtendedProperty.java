@@ -37,8 +37,11 @@ import java.time.OffsetDateTime;
 /**
  * ExtendedProperty
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T11:18:43.300+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
 public class ExtendedProperty   {
+  @JsonProperty("odata.metadata")
+  private String odataMetadata = null;
+
   @JsonProperty("Id")
   private Long id = null;
 
@@ -53,6 +56,24 @@ public class ExtendedProperty   {
 
   @JsonProperty("Date")
   private OffsetDateTime date = null;
+
+  public ExtendedProperty odataMetadata(String odataMetadata) {
+    this.odataMetadata = odataMetadata;
+    return this;
+  }
+
+   /**
+   * Get odataMetadata
+   * @return odataMetadata
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getOdataMetadata() {
+    return odataMetadata;
+  }
+
+  public void setOdataMetadata(String odataMetadata) {
+    this.odataMetadata = odataMetadata;
+  }
 
   public ExtendedProperty id(Long id) {
     this.id = id;
@@ -154,7 +175,8 @@ public class ExtendedProperty   {
       return false;
     }
     ExtendedProperty extendedProperty = (ExtendedProperty) o;
-    return Objects.equals(this.id, extendedProperty.id) &&
+    return Objects.equals(this.odataMetadata, extendedProperty.odataMetadata) &&
+        Objects.equals(this.id, extendedProperty.id) &&
         Objects.equals(this.name, extendedProperty.name) &&
         Objects.equals(this.text, extendedProperty.text) &&
         Objects.equals(this.number, extendedProperty.number) &&
@@ -163,7 +185,7 @@ public class ExtendedProperty   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, text, number, date);
+    return Objects.hash(odataMetadata, id, name, text, number, date);
   }
 
   @Override
@@ -171,6 +193,7 @@ public class ExtendedProperty   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExtendedProperty {\n");
     
+    sb.append("    odataMetadata: ").append(toIndentedString(odataMetadata)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
