@@ -37,7 +37,7 @@ import java.time.OffsetDateTime;
 /**
  * ExtendedProperty
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T11:00:33.220+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T11:18:43.300+03:00")
 public class ExtendedProperty   {
   @JsonProperty("Id")
   private Long id = null;
