@@ -39,10 +39,13 @@ import java.util.List;
 /**
  * FileList
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T13:50:34.751+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T14:16:29.169+03:00")
 public class FileList   {
   @JsonProperty("odata.metadata")
   private String odataMetadata = null;
+
+  @JsonProperty("odata.nextLink")
+  private String odataNextLink = null;
 
   @JsonProperty("value")
   private List<File> value = new ArrayList<File>();
@@ -63,6 +66,24 @@ public class FileList   {
 
   public void setOdataMetadata(String odataMetadata) {
     this.odataMetadata = odataMetadata;
+  }
+
+  public FileList odataNextLink(String odataNextLink) {
+    this.odataNextLink = odataNextLink;
+    return this;
+  }
+
+   /**
+   * Get odataNextLink
+   * @return odataNextLink
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getOdataNextLink() {
+    return odataNextLink;
+  }
+
+  public void setOdataNextLink(String odataNextLink) {
+    this.odataNextLink = odataNextLink;
   }
 
   public FileList value(List<File> value) {
@@ -99,12 +120,13 @@ public class FileList   {
     }
     FileList fileList = (FileList) o;
     return Objects.equals(this.odataMetadata, fileList.odataMetadata) &&
+        Objects.equals(this.odataNextLink, fileList.odataNextLink) &&
         Objects.equals(this.value, fileList.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(odataMetadata, value);
+    return Objects.hash(odataMetadata, odataNextLink, value);
   }
 
   @Override
@@ -113,6 +135,7 @@ public class FileList   {
     sb.append("class FileList {\n");
     
     sb.append("    odataMetadata: ").append(toIndentedString(odataMetadata)).append("\n");
+    sb.append("    odataNextLink: ").append(toIndentedString(odataNextLink)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();

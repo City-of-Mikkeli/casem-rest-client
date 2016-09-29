@@ -37,7 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T13:50:34.751+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T14:16:29.169+03:00")
 public class ContentsApi {
 
   private ApiClient client;
@@ -65,10 +65,13 @@ public class ContentsApi {
   /**
    * List contents
    * List contents
+   * @param skiptoken Skip until this id (optional)
    */
-  public ApiResponse<ContentList> listContents() {
+  public ApiResponse<ContentList> listContents(String skiptoken) {
     Map<String, Object> queryParams = new HashMap<>();
-        
+    if (skiptoken != null)
+    queryParams.put("$skiptoken", skiptoken);
+    
     String path = String.format("%s//Contents", baseUrl);
       
     ResultType<ContentList> resultType = new ResultType<ContentList>() {};
@@ -78,10 +81,13 @@ public class ContentsApi {
    * Lists extended properties by contentId
    * Lists extended properties by contentId
    * @param contentId Content id (required)
+   * @param skiptoken Skip until this id (optional)
    */
-  public ApiResponse<ExtendedPropertyList> listExtendedPropertiesByContent(Long contentId) {
+  public ApiResponse<ExtendedPropertyList> listExtendedPropertiesByContent(Long contentId, String skiptoken) {
     Map<String, Object> queryParams = new HashMap<>();
-        
+    if (skiptoken != null)
+    queryParams.put("$skiptoken", skiptoken);
+    
     String path = String.format("%s//Contents({contentId})/ExtendedProperties"
       .replaceAll("\\{" + "contentId" + "\\}", String.valueOf(contentId)), baseUrl);
       
@@ -92,10 +98,13 @@ public class ContentsApi {
    * Lists files by contentId
    * Lists files by contentId
    * @param contentId Content id (required)
+   * @param skiptoken Skip until this id (optional)
    */
-  public ApiResponse<FileList> listFilesByContent(Long contentId) {
+  public ApiResponse<FileList> listFilesByContent(Long contentId, String skiptoken) {
     Map<String, Object> queryParams = new HashMap<>();
-        
+    if (skiptoken != null)
+    queryParams.put("$skiptoken", skiptoken);
+    
     String path = String.format("%s//Contents({contentId})/Files"
       .replaceAll("\\{" + "contentId" + "\\}", String.valueOf(contentId)), baseUrl);
       

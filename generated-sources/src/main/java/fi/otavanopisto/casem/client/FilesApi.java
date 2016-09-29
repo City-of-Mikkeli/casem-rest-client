@@ -35,7 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T13:50:34.751+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T14:16:29.169+03:00")
 public class FilesApi {
 
   private ApiClient client;
@@ -63,10 +63,13 @@ public class FilesApi {
   /**
    * List files
    * List files
+   * @param skiptoken Skip until this id (optional)
    */
-  public ApiResponse<FileList> listFiles() {
+  public ApiResponse<FileList> listFiles(String skiptoken) {
     Map<String, Object> queryParams = new HashMap<>();
-        
+    if (skiptoken != null)
+    queryParams.put("$skiptoken", skiptoken);
+    
     String path = String.format("%s//Files", baseUrl);
       
     ResultType<FileList> resultType = new ResultType<FileList>() {};
