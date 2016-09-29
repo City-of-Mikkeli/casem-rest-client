@@ -6,7 +6,7 @@
   <packaging>jar</packaging>
   <name>casem-rest-client</name>
   <description>REST client library for CaseM</description>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>0.0.4-SNAPSHOT</version>
   <url>https://github.com/otavanopisto/casem-rest-client</url>
   <licenses>
     <license>

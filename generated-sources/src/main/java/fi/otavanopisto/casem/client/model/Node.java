@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.otavanopisto.casem.client.model.NodeName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +40,7 @@ import java.util.List;
 /**
  * Node
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T13:50:34.751+03:00")
 public class Node   {
   @JsonProperty("odata.metadata")
   private String odataMetadata = null;
@@ -58,7 +58,9 @@ public class Node   {
   private Integer sortOrder = null;
 
   @JsonProperty("Date")
-  private OffsetDateTime date = null;
+  @com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.class)  
+  @com.fasterxml.jackson.databind.annotation.JsonSerialize(using = com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer.class)  
+  private LocalDateTime date = null;
 
   @JsonProperty("Type")
   private Long type = null;
@@ -158,7 +160,7 @@ public class Node   {
     this.sortOrder = sortOrder;
   }
 
-  public Node date(OffsetDateTime date) {
+  public Node date(LocalDateTime date) {
     this.date = date;
     return this;
   }
@@ -168,11 +170,11 @@ public class Node   {
    * @return date
   **/
   @ApiModelProperty(example = "null", value = "")
-  public OffsetDateTime getDate() {
+  public LocalDateTime getDate() {
     return date;
   }
 
-  public void setDate(OffsetDateTime date) {
+  public void setDate(LocalDateTime date) {
     this.date = date;
   }
 

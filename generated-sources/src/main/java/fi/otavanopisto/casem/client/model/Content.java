@@ -32,7 +32,7 @@ import fi.otavanopisto.casem.client.model.ContentClassification;
 import fi.otavanopisto.casem.client.model.ContentFileLink;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * Content
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T12:59:35.612+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T13:50:34.751+03:00")
 public class Content   {
   @JsonProperty("odata.metadata")
   private String odataMetadata = null;
@@ -56,16 +56,24 @@ public class Content   {
   private Long languageId = null;
 
   @JsonProperty("PublicDate")
-  private OffsetDateTime publicDate = null;
+  @com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.class)  
+  @com.fasterxml.jackson.databind.annotation.JsonSerialize(using = com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer.class)  
+  private LocalDateTime publicDate = null;
 
   @JsonProperty("ExpiryDate")
-  private OffsetDateTime expiryDate = null;
+  @com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.class)  
+  @com.fasterxml.jackson.databind.annotation.JsonSerialize(using = com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer.class)  
+  private LocalDateTime expiryDate = null;
 
   @JsonProperty("CreatedDate")
-  private OffsetDateTime createdDate = null;
+  @com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.class)  
+  @com.fasterxml.jackson.databind.annotation.JsonSerialize(using = com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer.class)  
+  private LocalDateTime createdDate = null;
 
   @JsonProperty("EditedDate")
-  private OffsetDateTime editedDate = null;
+  @com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.class)  
+  @com.fasterxml.jackson.databind.annotation.JsonSerialize(using = com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer.class)  
+  private LocalDateTime editedDate = null;
 
   @JsonProperty("TemplateId")
   private Long templateId = null;
@@ -80,10 +88,14 @@ public class Content   {
   private Long editor = null;
 
   @JsonProperty("EventStartDate")
-  private OffsetDateTime eventStartDate = null;
+  @com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.class)  
+  @com.fasterxml.jackson.databind.annotation.JsonSerialize(using = com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer.class)  
+  private LocalDateTime eventStartDate = null;
 
   @JsonProperty("EventEndDate")
-  private OffsetDateTime eventEndDate = null;
+  @com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer.class)  
+  @com.fasterxml.jackson.databind.annotation.JsonSerialize(using = com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer.class)  
+  private LocalDateTime eventEndDate = null;
 
   @JsonProperty("Classifications")
   private List<ContentClassification> classifications = new ArrayList<ContentClassification>();
@@ -163,7 +175,7 @@ public class Content   {
     this.languageId = languageId;
   }
 
-  public Content publicDate(OffsetDateTime publicDate) {
+  public Content publicDate(LocalDateTime publicDate) {
     this.publicDate = publicDate;
     return this;
   }
@@ -173,15 +185,15 @@ public class Content   {
    * @return publicDate
   **/
   @ApiModelProperty(example = "null", value = "")
-  public OffsetDateTime getPublicDate() {
+  public LocalDateTime getPublicDate() {
     return publicDate;
   }
 
-  public void setPublicDate(OffsetDateTime publicDate) {
+  public void setPublicDate(LocalDateTime publicDate) {
     this.publicDate = publicDate;
   }
 
-  public Content expiryDate(OffsetDateTime expiryDate) {
+  public Content expiryDate(LocalDateTime expiryDate) {
     this.expiryDate = expiryDate;
     return this;
   }
@@ -191,15 +203,15 @@ public class Content   {
    * @return expiryDate
   **/
   @ApiModelProperty(example = "null", value = "")
-  public OffsetDateTime getExpiryDate() {
+  public LocalDateTime getExpiryDate() {
     return expiryDate;
   }
 
-  public void setExpiryDate(OffsetDateTime expiryDate) {
+  public void setExpiryDate(LocalDateTime expiryDate) {
     this.expiryDate = expiryDate;
   }
 
-  public Content createdDate(OffsetDateTime createdDate) {
+  public Content createdDate(LocalDateTime createdDate) {
     this.createdDate = createdDate;
     return this;
   }
@@ -209,15 +221,15 @@ public class Content   {
    * @return createdDate
   **/
   @ApiModelProperty(example = "null", value = "")
-  public OffsetDateTime getCreatedDate() {
+  public LocalDateTime getCreatedDate() {
     return createdDate;
   }
 
-  public void setCreatedDate(OffsetDateTime createdDate) {
+  public void setCreatedDate(LocalDateTime createdDate) {
     this.createdDate = createdDate;
   }
 
-  public Content editedDate(OffsetDateTime editedDate) {
+  public Content editedDate(LocalDateTime editedDate) {
     this.editedDate = editedDate;
     return this;
   }
@@ -227,11 +239,11 @@ public class Content   {
    * @return editedDate
   **/
   @ApiModelProperty(example = "null", value = "")
-  public OffsetDateTime getEditedDate() {
+  public LocalDateTime getEditedDate() {
     return editedDate;
   }
 
-  public void setEditedDate(OffsetDateTime editedDate) {
+  public void setEditedDate(LocalDateTime editedDate) {
     this.editedDate = editedDate;
   }
 
@@ -307,7 +319,7 @@ public class Content   {
     this.editor = editor;
   }
 
-  public Content eventStartDate(OffsetDateTime eventStartDate) {
+  public Content eventStartDate(LocalDateTime eventStartDate) {
     this.eventStartDate = eventStartDate;
     return this;
   }
@@ -317,15 +329,15 @@ public class Content   {
    * @return eventStartDate
   **/
   @ApiModelProperty(example = "null", value = "")
-  public OffsetDateTime getEventStartDate() {
+  public LocalDateTime getEventStartDate() {
     return eventStartDate;
   }
 
-  public void setEventStartDate(OffsetDateTime eventStartDate) {
+  public void setEventStartDate(LocalDateTime eventStartDate) {
     this.eventStartDate = eventStartDate;
   }
 
-  public Content eventEndDate(OffsetDateTime eventEndDate) {
+  public Content eventEndDate(LocalDateTime eventEndDate) {
     this.eventEndDate = eventEndDate;
     return this;
   }
@@ -335,11 +347,11 @@ public class Content   {
    * @return eventEndDate
   **/
   @ApiModelProperty(example = "null", value = "")
-  public OffsetDateTime getEventEndDate() {
+  public LocalDateTime getEventEndDate() {
     return eventEndDate;
   }
 
-  public void setEventEndDate(OffsetDateTime eventEndDate) {
+  public void setEventEndDate(LocalDateTime eventEndDate) {
     this.eventEndDate = eventEndDate;
   }
 
