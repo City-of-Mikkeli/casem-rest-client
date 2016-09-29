@@ -25,6 +25,10 @@ paths:
             type: array
             items:
               $ref: '#/definitions/File'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /Files({fileId}):
     get:
       operationId: findFile
@@ -44,6 +48,18 @@ paths:
           description: Return single file
           schema:
             $ref: '#/definitions/File'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /ContentLanguages:
     get:
       operationId: listContentLanguages
@@ -58,6 +74,10 @@ paths:
             type: array
             items:
               $ref: '#/definitions/ContentLanguage'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /ContentLanguages({contentLanguageId}):
     get:
       operationId: findContentLanguage
@@ -77,6 +97,18 @@ paths:
           description: Return a single contentLanguage
           schema:
             $ref: '#/definitions/ContentLanguage'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /Nodes:
     get:
       operationId: listNodes
@@ -91,6 +123,10 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Node'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /Nodes({nodeId}):
     get:
       operationId: findNode
@@ -110,6 +146,18 @@ paths:
           description: Return a single node
           schema:
             $ref: '#/definitions/Node'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /Contents:
     get:
       operationId: listContents
@@ -124,6 +172,10 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Content'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /Contents({contentId}):
     get:
       operationId: findContent
@@ -143,6 +195,18 @@ paths:
           description: Return a single content
           schema:
             $ref: '#/definitions/Content'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /ExtendedProperties:
     get:
       operationId: listExtendedProperties
@@ -157,6 +221,10 @@ paths:
             type: array
             items:
               $ref: '#/definitions/ExtendedProperty'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /ExtendedProperties({extendedPropertyId}):
     get:
       operationId: findExtendedProperty
@@ -176,6 +244,18 @@ paths:
           description: Return a single extendedProperty
           schema:
             $ref: '#/definitions/ExtendedProperty'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /Templates:
     get:
       operationId: listTemplates
@@ -190,6 +270,10 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Template'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
   /Templates({templateId}):
     get:
       operationId: findTemplate
@@ -209,6 +293,18 @@ paths:
           description: Return a single template
           schema:
             $ref: '#/definitions/Template'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
 definitions:
   File:
     properties:
@@ -382,3 +478,15 @@ definitions:
       LanguageId:
         type: integer
         format: int64
+  Error:
+    properties:
+      odata.error:
+        properties:
+          code:
+            type: string
+          message:
+            properties:
+              lang:
+                type: string
+              value:
+                type: string
