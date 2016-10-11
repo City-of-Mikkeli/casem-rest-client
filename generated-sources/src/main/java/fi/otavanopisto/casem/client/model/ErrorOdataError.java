@@ -37,7 +37,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ErrorOdataError
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-09-29T14:16:29.169+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T05:48:16.423+03:00")
 public class ErrorOdataError   {
   @JsonProperty("code")
   private String code = null;
