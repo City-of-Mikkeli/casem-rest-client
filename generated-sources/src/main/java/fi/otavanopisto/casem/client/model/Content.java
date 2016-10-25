@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * Content
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T06:32:12.166+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-25T10:31:17.433+03:00")
 public class Content   {
   @JsonProperty("odata.metadata")
   private String odataMetadata = null;

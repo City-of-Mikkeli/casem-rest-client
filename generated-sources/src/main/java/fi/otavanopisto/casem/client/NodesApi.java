@@ -35,7 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T06:32:12.166+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-25T10:31:17.433+03:00")
 public class NodesApi {
 
   private ApiClient client;
@@ -86,7 +86,7 @@ public class NodesApi {
     if (skiptoken != null)
     queryParams.put("$skiptoken", skiptoken);
     
-    String path = String.format("%s//Nodes({nodeId})/SubNodes"
+    String path = String.format("%s//Nodes({nodeId})/{path}/SubNodes"
       .replaceAll("\\{" + "nodeId" + "\\}", String.valueOf(nodeId)), baseUrl);
       
     ResultType<NodeList> resultType = new ResultType<NodeList>() {};
