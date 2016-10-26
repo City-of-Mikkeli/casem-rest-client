@@ -182,7 +182,7 @@ paths:
           required: true
           type: integer
           format: int64
-        - name: path
+        - name: pathQuery
           in: path
           description: Node path query
           required: true
