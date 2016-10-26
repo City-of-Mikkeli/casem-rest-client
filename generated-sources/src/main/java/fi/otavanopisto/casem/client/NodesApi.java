@@ -35,7 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-25T10:31:17.433+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-26T06:01:48.185+03:00")
 public class NodesApi {
 
   private ApiClient client;
@@ -79,15 +79,17 @@ public class NodesApi {
    * Lists node subnodes
    * Lists node subnodes
    * @param nodeId Node id (required)
+   * @param pathQuery Node path query (required)
    * @param skiptoken Skip until this id (optional)
    */
-  public ApiResponse<NodeList> listSubNodes(Long nodeId, String skiptoken) {
+  public ApiResponse<NodeList> listSubNodes(Long nodeId, String pathQuery, String skiptoken) {
     Map<String, Object> queryParams = new HashMap<>();
     if (skiptoken != null)
     queryParams.put("$skiptoken", skiptoken);
     
-    String path = String.format("%s//Nodes({nodeId})/{path}/SubNodes"
-      .replaceAll("\\{" + "nodeId" + "\\}", String.valueOf(nodeId)), baseUrl);
+    String path = String.format("%s//Nodes({nodeId})/{path}"
+      .replaceAll("\\{" + "nodeId" + "\\}", String.valueOf(nodeId))
+      .replaceAll("\\{" + "pathQuery" + "\\}", String.valueOf(pathQuery)), baseUrl);
       
     ResultType<NodeList> resultType = new ResultType<NodeList>() {};
     return client.doGETRequest(path, resultType, queryParams);
