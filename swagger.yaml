@@ -170,7 +170,7 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/Error'
-  /Nodes({nodeId})/{path}/SubNodes:
+  /Nodes({nodeId})/{path}:
     get:
       operationId: listSubNodes
       summary: Lists node subnodes
@@ -182,6 +182,11 @@ paths:
           required: true
           type: integer
           format: int64
+        - name: path
+          in: path
+          description: Node path query
+          required: true
+          type: string
         - name: $skiptoken
           in: query
           description: Skip until this id
