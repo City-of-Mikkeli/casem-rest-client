@@ -170,7 +170,7 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/Error'
-  /Nodes({nodeId})/{path}:
+  /Nodes({nodeId})/{pathQuery}:
     get:
       operationId: listSubNodes
       summary: Lists node subnodes
