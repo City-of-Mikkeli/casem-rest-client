@@ -35,7 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-26T06:01:48.185+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-26T06:14:28.404+03:00")
 public class TemplatesApi {
 
   private ApiClient client;
